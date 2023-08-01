@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
-import Template from "./Template";
-import Counter from "./Counter";
-import Albums from "./Albums";
-import Users from "./Users";
-import "./App.css";
+import Template from "./template/Template";
+import Counter from "./pages/Counter";
+import Albums from "./pages/Albums";
+import Users from "./pages/Users";
 
 const defaultPage = "albums";
 
@@ -33,7 +32,7 @@ const App = () => {
   const Page = pages[page].component;
 
   return (
-    <Template pages={pages} onChangePage={handleChangePage}>
+    <Template pages={pages} activePage={page} onChangePage={handleChangePage}>
       {Page && <Page />}
     </Template>
   );
